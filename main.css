@@ -6,16 +6,36 @@ body {
 }
 
 header {
-    background-color: deeppink; 
+    background: linear-gradient(to right, red, orange, yellow, green, lightblue, blue, purple); 
     color: black; 
     padding: 20px; 
     font-size: 16pt;
 }
 
 footer {
-    background-color: deeppink;
+    background: linear-gradient(to right, red, orange, yellow, green, lightblue, blue, purple); 
      color: black; 
      font-style: italic; 
      text-align: right; 
      margin: 0px;
+}
+
+a {
+    color: green; 
+    text-decoration: none;
+}
+
+a:visited {
+    color: blueviolet;
+}
+
+a:hover {
+    color: red;
+    text-decoration: underline;
+    background-color: white;
+    font-weight: bold;
+}
+a:active {
+    color: yellow;
+    background-color: green;
 }
