@@ -1,0 +1,21 @@
+body {
+    background-color: lightpink;
+    color: black;
+    font-family: Arial;
+    margin: 0px;
+}
+
+header {
+    background-color: deeppink; 
+    color: black; 
+    padding: 20px; 
+    font-size: 16pt;
+}
+
+footer {
+    background-color: deeppink;
+     color: black; 
+     font-style: italic; 
+     text-align: right; 
+     margin: 0px;
+}
