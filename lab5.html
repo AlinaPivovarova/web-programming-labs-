@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Пивоварова Алина Евгеньевна. Лабораторная 5</title>
+    <link rel="stylesheet" href="main.css">
+    <script>
+        function showSum() {
+            let inputA = document.getElementById('numberA');
+            let inputB = document.getElementById('numberB');
+
+            let a = parseInt(inputA.value);
+            let b = parseInt(inputB.value);
+            let result = a + b;
+            alert('Сумма ' + a + ' и ' + b + ' равна ' + result);
+        }
+        function showAuthor() {
+            let author = 'Автор страницы:\nПивоварова Алина Евгеньевна\nХорошего дня:)';
+            alert(author);
+        }
+        function showRazn() {
+            let inputA = document.getElementById('numberA');
+            let inputB = document.getElementById('numberB'); 
+
+            let a = parseInt(inputA.value);
+            let b = parseInt(inputB.value);
+            let result = a - b;
+            alert('Разница ' + a + ' и ' + b + ' равна ' + result);
+        }
+        function showPro() {
+            let inputA = document.getElementById('numberA');
+            let inputB = document.getElementById('numberB'); 
+
+            let a = parseInt(inputA.value);
+            let b = parseInt(inputB.value);
+            let result = a * b;
+            alert('Произведение ' + a + ' и ' + b + ' равно ' + result);
+        }
+        function showDel() {
+            let inputA = document.getElementById('numberA');
+            let inputB = document.getElementById('numberB'); 
+
+            let a = parseInt(inputA.value);
+            let b = parseInt(inputB.value);
+            let result = a / b;
+            alert('Деление' + a + ' и ' + b + ' равно ' + result);
+        }
+        function changeOutput(buttonNum, backColor, textColor, rama) {
+            let output = document.getElementById('output');
+            output.innerHTML = 'Нажата кнопка' + buttonNum;
+            output.style.backgroundColor = backColor;
+            output.style.color = textColor;
+            output.style.border = rama
+        }
+    </script>
+    <style>
+       .message{
+        width: 250px;
+        height: 40px;
+        background-color: lightblue;
+        border: 2px solid;
+        display: inline-block;
+        border-radius: 10px;
+        cursor: pointer;
+       } 
+       #output {
+        border: 1px solid;
+        width: 300px;
+        height: 40px;
+       }
+    </style>
+</head>
+
+<body>
+    <header onclick="showAuthor()">
+        НГТУ, ФБ, Лабораторная работа 5
+    </header>
+    
+    <main>
+        <label>Первое число: <input type="number" value="5154" id="numberA"></label><br>
+        <label>Второе число: <input type="number" value="7891" id="numberB"></label><br>
+        <div class="message" onclick="showSum()">Найти сумму чисел</div>
+
+        <div class="message" onclick="showAuthor()">Узнать кто авторы страницы</div>
+        
+        <div class="message" onclick="showRazn()">Найти разницу чисел</div>
+
+        <div class="message" onclick="showPro()">Найти произведение чисел</div>
+
+        <div class="message" onclick="showDel()">Найти деление чисел</div>
+
+        <div>
+            <input type="button" value="Кнопка 1" onclick="changeOutput(1, 'red', 'yellow', 'solid')">
+            <input type="button" value="Кнопка 2" onclick="changeOutput(2, 'black', 'lime', 'dotted')">
+            <input type="button" value="Кнопка 3" onclick="changeOutput(3, 'green', 'red', 'dashed')">
+            <input type="button" value="Кнопка 4" onclick="changeOutput(4, 'purple', 'white', 'dotted')">
+        </div>
+
+        <div id="output"></div>
+    </main>
+
+    <footer onclick="showAuthor()">
+        &copy; Пивоварова Алина, ФБИ-14, 2 курс, 2023
+    </footer>
+</body>
+</html>
