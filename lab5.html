@@ -54,6 +54,21 @@
             output.style.color = textColor;
             output.style.border = rama
         }
+        function korzina() {
+            let inputRaf = document.getElementById('Raf');
+            let inputKapuchino = document.getElementById('Kapuchino');
+            let inputAmer = document.getElementById('Amer');
+            let inputEspr = document.getElementById('Espr');
+            let inputChay = document.getElementById('Chay');
+
+            let a = parseInt(inputRaf.value);
+            let b = parseInt(inputKapuchino.value);
+            let c = parseInt(inputAmer.value);
+            let d = parseInt(inputEspr.value);
+            let e = parseInt(inputChay.value);
+            let result = a * 250 + b * 150 + c * 100 + d * 80 + e * 200;
+            btn.innerHTML = 'Общая цена: ' + result;
+        }
     </script>
     <style>
        .message{
@@ -69,6 +84,15 @@
         border: 1px solid;
         width: 300px;
         height: 40px;
+       }
+       .korz{
+        width: 240px;
+        height: 320px;
+        border: 2px solid blueviolet;
+        border-radius: 5px;
+       }
+       .btn{
+        color: blueviolet;
        }
     </style>
 </head>
@@ -100,9 +124,20 @@
 
         <div id="output"></div>
 
-        <h2>Корзина товаров</h2>
-        <div>
-            
+        <div class="korz">
+        <h2 style="color: blueviolet;">Корзина товаров</h2>
+        <div>Раф (250р/шт):</div>
+        <input type="number" value="0" min="0" id="Raf"><br>
+        <div>Капучино (150р/шт):</div>
+        <input type="number" value="0" min="0" id="Kapuchino"><br>
+        <div>Американо (100р/шт):</div>
+        <input type="number" value="0" min="0" id="Amer"><br>
+        <div>Эспрессо (80р/шт):</div>
+        <input type="number" value="0" min="0" id="Espr"><br>
+        <div>Чай (200р/шт):</div>
+        <input type="number" value="0" min="0" id="Chay"><br>
+        <button onclick="korzina()">Рассчитать</button> 
+        <div id="btn" class="btn"></div>
         </div>
     </main>
 
