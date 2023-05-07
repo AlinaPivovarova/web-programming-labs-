@@ -11,15 +11,13 @@
           border-radius: 30px;
           border: 2px solid rgb(151, 60, 136); 
           margin: 30px 600px;
-          padding: 20px 100px;
+          padding: 20px 50px;
           text-align: center;
         }
     </style>
     <script>
         let number;
         let count = 0;
-        let a = 1;
-        let b = 100;
         function starGame() {
             number = Math.floor(Math.random() * 100) + 1;
             let screens = document.getElementsByClassName('game');
@@ -45,10 +43,10 @@
                 document.getElementById('number').innerHTML = number;
                 document.getElementById('try-count').innerHTML = count;
             }
-            if(userNumber < a) {
+            if(userNumber < 1) {
                 message.innerHTML = 'Число должно быть в диапазоне от 1 до 100';
             }
-            else if(userNumber > b) {
+            else if(userNumber > 100) {
                 message.innerHTML = 'Число должно быть в диапазоне от 1 до 100';
             }
         }
@@ -59,7 +57,8 @@
             screens[1].style.display = 'block'; 
             number = Math.floor(Math.random() * 100) + 1; 
             document.getElementById('try-count').innerHTML = count;
-            document.getElementById('result').style.display = 'none'
+            //document.getElementById('result').style.display = 'none';
+            document.getElementById('result').innerHTML = "";
         }
         </script>
 </head>
