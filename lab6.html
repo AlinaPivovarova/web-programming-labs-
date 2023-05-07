@@ -18,6 +18,8 @@
     <script>
         let number;
         let count = 0;
+        let a = 1;
+        let b = 100;
         function starGame() {
             number = Math.floor(Math.random() * 100) + 1;
             let screens = document.getElementsByClassName('game');
@@ -43,12 +45,21 @@
                 document.getElementById('number').innerHTML = number;
                 document.getElementById('try-count').innerHTML = count;
             }
+            if(userNumber < a) {
+                message.innerHTML = 'Число должно быть в диапазоне от 1 до 100';
+            }
+            else if(userNumber > b) {
+                message.innerHTML = 'Число должно быть в диапазоне от 1 до 100';
+            }
         }
         function again() {
+            count=0;
             let screens = document.getElementsByClassName('game');
             screens[2].style.display = 'none';
             screens[1].style.display = 'block'; 
             number = Math.floor(Math.random() * 100) + 1; 
+            document.getElementById('try-count').innerHTML = count;
+            document.getElementById('result').style.display = 'none'
         }
         </script>
 </head>
