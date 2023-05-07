@@ -14,6 +14,12 @@
           padding: 20px 50px;
           text-align: center;
         }
+        .pravila{
+            border-radius: 30px;
+            background-color: rgb(137, 179, 158);
+            margin: 10px 500px;
+            padding: 15px 10px;
+        }
     </style>
     <script>
         let number;
@@ -57,8 +63,17 @@
             screens[1].style.display = 'block'; 
             number = Math.floor(Math.random() * 100) + 1; 
             document.getElementById('try-count').innerHTML = count;
-            //document.getElementById('result').style.display = 'none';
             document.getElementById('result').innerHTML = "";
+        }
+        function prav() {
+            let scrin = document.getElementsByClassName('pravila');
+            scrin[0].style.display = 'none';
+            scrin[1].style.display = 'block';
+        }
+        function skrit() {
+            let scrin = document.getElementsByClassName('pravila');
+            scrin[1].style.display = 'none';
+            scrin[0].style.display = 'block';  
         }
         </script>
 </head>
@@ -96,6 +111,19 @@
             <div>
                 <button onclick="again()">Сыграть еще раз</button>
             </div>
+        </div>
+
+        <div class="pravila">
+            <button onclick="prav()">Показать правила игры</button>
+        </div>
+        <div class="pravila" style="display: none;">
+            <button onclick="skrit()">Скрыть правила игры</button>
+            <div>A. нажмите кнопку сыграть в игру</div>
+            <div>B. введите число</div>
+            <div>C. проанализируйте ответ</div>
+            <div>D. попробуйте ввести новое число</div>
+            <div>E. убедитесь, что вводите правильный диапазон</div>
+            
         </div>
     </main>
  
