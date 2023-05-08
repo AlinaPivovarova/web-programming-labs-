@@ -86,6 +86,33 @@
             scrin[1].style.display = 'none';
             scrin[0].style.display = 'block';  
         }
+        function changeColor(div) {
+           if(div.style.backgroundColor == 'yellow') {
+            div.style.backgroundColor = 'red';
+            div.style.color = 'blue';
+            document.getElementById('color-name').innerHTML = 'красный';
+           }
+           else if(div.style.backgroundColor == 'red') {
+            div.style.backgroundColor = 'black';
+            div.style.color = 'yellow';
+            document.getElementById('color-name').innerHTML = 'черный';
+           }
+           else if(div.style.backgroundColor == 'black') {
+            div.style.backgroundColor = 'purple';
+            div.style.color = 'black';
+            document.getElementById('color-name').innerHTML = 'фиолетовый';
+           }
+           else if(div.style.backgroundColor == 'purple') {
+            div.style.backgroundColor = 'pink';
+            div.style.color = 'green';
+            document.getElementById('color-name').innerHTML = 'розовый';
+           }
+           else {
+            div.style.backgroundColor = 'yellow';
+            div.style.color = 'rgb(121, 44, 44)';
+            document.getElementById('color-name').innerHTML = 'желтый';
+           }
+        }
         </script>
 </head>
 
@@ -138,9 +165,9 @@
             </ol>
         </div>
 
-        <div class="yellow" ondblclick="changeColor()">
-            Цвет: желтый
-            <div>Сделайте двойной щелчок, чтобы сменить.</div>
+        <div class="yellow" ondblclick="changeColor(this)">
+            Цвет:<span id="color-name">желтый</span><br>
+            Сделайте двойной щелчок, чтобы сменить.
         </div>
     </main>
  
