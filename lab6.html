@@ -37,7 +37,7 @@
             text-align: center;
             
         }
-        .c{
+        .c {
             width: 150px;
             height: 100px;
             float: left;
@@ -52,6 +52,18 @@
             top: 5px;
             cursor: pointer; 
             transform: rotate(); 
+        }
+        .block {
+            width: 100px;
+            height: 50px;
+            background-color: rgb(107, 153, 168);
+            color: black;
+            position: relative;
+            top: 150px;
+            left: 200px;
+            border-radius: 5px;
+            border: 2px solid black;
+            cursor: pointer;
         }
     </style>
     <script>
@@ -151,6 +163,14 @@
             }
           }
         }
+        function block(k) {
+            if(parseInt(k.style.width)<=1000){
+                k.style.width = parseInt(k.style.width) +50 + 'px';
+            }
+            else {
+                k.style.width = '100px'
+            }
+        }
         </script>
 </head>
 
@@ -210,6 +230,7 @@
         <div class="c" onclick="plase(this)">
             Щелкни меня
         </div>
+        <div class="block" id = 'izm' onclick="block(this)"></div>
     </main>
  
     <footer class="footer">
