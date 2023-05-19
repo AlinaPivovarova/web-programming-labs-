@@ -48,6 +48,24 @@
             colors.appendChild(box);
            }
         }
+        function createCircles() {
+            let numCurcles = document.getElementById('numCurcles').value;
+            let circles = document.getElementById('circles');
+            for (let i = numCurcles; i > 0; i--){
+                let circle = document.createElement('div');
+                circle.style.width = '50px';
+                circle.style.height = '50px';
+                circle.style.borderRadius = '100px';
+                circle.style.textAlign = 'center';
+                if (i % 2 == 0){
+                    circle.style.backgroundColor = 'rgb(150, 105, 146)'
+                }
+                else {circle.style.backgroundColor = 'rgb(105, 150, 109)'
+                }
+                circle.innerHTML = i;
+                circles.appendChild(circle);
+            }
+        }
     </script>
 </head>
 <body>
@@ -60,12 +78,16 @@
         <div id="blocks"></div>
 
         <button onclick="showExchange()">Курс доллара</button>
-        <table border="1" id="dollar-exchange"></table>
+        <table border = "1" id="dollar-exchange"></table>
         <div id="detail"></div>
         
         <button onclick="addTransparentBlocks()">Создать прозрачные блоки</button>
         <div id="transparent-blocks"></div>
-    </main>
+        
+        <label>Введите количество кругов:</label>
+        <input type="number" value="5" placeholder="Введите число кругов" id="numCurcles">
+        <button onclick="createCircles()">зеленый/фиолетовый</button>
+        <div id="circles"></div>
     <footer>
         &copy; Пивоварова Алина, ФБИ-14, 2 курс, 2023 
     </footer>
