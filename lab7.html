@@ -66,6 +66,15 @@
                 circles.appendChild(circle);
             }
         }
+        function UmnTable() {
+            let umn = document.getElementById('umn');
+            for (let i = 13; i < 34; i++){
+                let table = document.createElement('div');
+                table.innerHTML = i + '*' + 74 + '='+ (i*74);
+                table.style.color = 'olive'
+                umn.appendChild(table);
+            }
+        }
     </script>
 </head>
 <body>
@@ -88,6 +97,9 @@
         <input type="number" value="5" placeholder="Введите число кругов" id="numCurcles">
         <button onclick="createCircles()">зеленый/фиолетовый</button>
         <div id="circles"></div>
+
+        <button onclick="UmnTable()">Таблица умножения на 74</button>
+        <div id="umn"></div>
     <footer>
         &copy; Пивоварова Алина, ФБИ-14, 2 курс, 2023 
     </footer>
