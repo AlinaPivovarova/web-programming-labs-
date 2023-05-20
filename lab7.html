@@ -75,6 +75,43 @@
                 umn.appendChild(table);
             }
         }
+        function Akziya() {
+            let data = ['19-05-2023', '18-05-2023', '17-05-2023', '16-05-2023', '15-05-2023',
+                        '12-05-2023', '11-05-2023', '10-05-2023', '8-05-2023', '5-05-2023'];
+            let kurs = [14.54, 14.72, 15.06, 15.21, 15.38, 15.30, 15.64,
+                        15.09, 14.70, 14.61];
+            let tab = document.getElementById('rossety');
+            for(let i = 0; i < data.length; i++){
+                let tr = document.createElement('tr');
+                let tdData = document.createElement('td');
+                tdData.innerHTML = data[i];
+                tr.appendChild(tdData);
+                let tdKurs = document.createElement('td');
+                tdKurs.innerHTML = kurs[i];
+                tr.appendChild(tdKurs);
+                let tdRazn = document.createElement('td');
+                if (i==0){
+                    tdRazn.innerHTML = '-';
+                }
+                else {
+                    tdRazn.innerHTML = (kurs[i]-kurs[i-1]).toFixed(2);
+                }
+                tr.appendChild(tdRazn);
+                tab.appendChild(tr);
+            }
+            let sum = 0;
+            for(let i = 0; i < kurs.length; i++) {
+                sum = sum + kurs[i];
+            }
+            let middle = sum / kurs.length;
+            document.getElementById('middle').innerHTML = 'Среднее значение: ' + middle;
+
+            let min = Math.min(...kurs);
+            document.getElementById('min').innerHTML = 'Минимальное значение: '+ min;
+
+            let max = Math.max(...kurs);
+            document.getElementById('max').innerHTML = 'Максимальное значение: ' + max;
+        }
     </script>
 </head>
 <body>
@@ -100,6 +137,12 @@
 
         <button onclick="UmnTable()">Таблица умножения на 74</button>
         <div id="umn"></div>
+
+        <button onclick="Akziya()">Курс акций Россети Ленэнерго</button>
+        <table border = '3' id ='rossety'></table>
+        <div id="middle"></div>
+        <div id="min"></div>
+        <div id="max"></div>
     <footer>
         &copy; Пивоварова Алина, ФБИ-14, 2 курс, 2023 
     </footer>
