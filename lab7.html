@@ -68,7 +68,7 @@
         }
         function UmnTable() {
             let umn = document.getElementById('umn');
-            for (let i = 13; i < 34; i++){
+            for (let i = 13; i < 34; i=i+10){
                 let table = document.createElement('div');
                 table.innerHTML = i + '*' + 74 + '='+ (i*74);
                 table.style.color = 'olive'
