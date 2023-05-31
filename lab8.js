@@ -9,7 +9,7 @@ function showDate() {
     "Дата и время для африканской локали: " + today.toLocaleString('af') ;
     out.style.color = 'olive'
     out.style.fontFamily = 'Monserat'
-    out.style.fontSize = '16px'
+    out.style.fontSize = '20px'
 }
 function showDaysCount(){
     let today = new Date();
@@ -17,5 +17,9 @@ function showDaysCount(){
     let birthday = new Date(inputDate.value);
     let daysCount = (today - birthday)/1000/60/60/24;
     daysCount = Math.floor(daysCount);
-    alert(daysCount);
+    document.getElementById('rojd').innerHTML = "Количество дней с даты рождения: " + daysCount;
+}
+function detet(){
+    document.getElementById('d').value = "";
+    document.getElementById('rojd').innerHTML="";
 }
