@@ -55,13 +55,13 @@
         function Pravo() {
             let r = parseFloat(document.getElementById('rubli').value);
             let d = document.getElementById('dollar');
-            let result = r * 81.43;
+            let result = r / 81.43;
             d.value = result.toFixed(3)
         }
         function Levo() {
             let d = parseFloat(document.getElementById('dollar').value);
             let r = document.getElementById('rubli');
-            let result = d / 81.43;
+            let result = d * 81.43;
             r.value = result.toFixed(3)
         }
         function delet() {
