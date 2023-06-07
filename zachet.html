@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Пивоварова Алина Евгеньевна. Лабораторная 6</title>
+    <link rel="stylesheet" href="main.css">
+    <style>
+        .rubli {
+            color: blue;
+        }
+        .dollar {
+            color: green;
+            margin-left: 100px;
+        }
+        .pravo {
+            background-color: purple;
+            color: white;
+            margin-left: 206px;
+            border: none;
+        }
+        .pravo:hover {
+           color: purple;
+           background-color: white;
+           transition: 1s;
+        }
+        .levo {
+            background-color: purple;
+            color: white;
+            margin-left: 206px;
+            margin-top: 10px;
+            border: none;
+        }
+        .levo:hover {
+            color: purple;
+            background-color: white;
+            transition: 1s;
+        }
+        .delet {
+            background-color: purple;
+            color: white;
+            margin-left: 206px;
+            margin-top: 10px;
+            border: none;
+        }
+        .delet:hover {
+            color: purple;
+            background-color: white;
+            transition: 1s;
+        }
+
+    </style>
+    <script>
+        function Pravo() {
+            let r = parseFloat(document.getElementById('rubli').value);
+            let d = document.getElementById('dollar');
+            let result = r * 81.43;
+            d.value = result.toFixed(3)
+        }
+        function Levo() {
+            let d = parseFloat(document.getElementById('dollar').value);
+            let r = document.getElementById('rubli');
+            let result = d / 81.43;
+            r.value = result.toFixed(3)
+        }
+        function delet() {
+            document.getElementById('dollar').value = ""
+            document.getElementById('rubli').value = ""
+        }
+
+    </script>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Зачет
+    </header>
+    <main>
+        <input type="number" min="0" placeholder="Введите рубли" id="rubli" class="rubli">
+        <input type="number" min="0" placeholder="Доллары" id="dollar" class="dollar">
+        <div>
+            <button onclick="Pravo()" class="pravo">Вправо</button>
+        </div>
+        <div>
+            <button onclick="Levo()" class="levo">Влево</button>
+        </div>
+        <div>
+            <button onclick="delet()" class="delet">Очистить</button>
+        </div>
+
+    </main>
+    <footer>
+        &copy; Пивоварова Алина, ФБИ-14, 2 курс, 2023 
+    </footer>
+</body>
+</html>
